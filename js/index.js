@@ -4,27 +4,32 @@
 
 let errorText = "";
 
-let age = prompt('Enter your age');
+let birthYear = prompt('Enter yours birth year');
 
-if (age == null) {
+if (birthYear == null) {
     errorText = "Sorry that you do not want to share your age";
     alert(errorText);
     throw errorText;
 }
-if (isNaN(age)) {
+if (isNaN(birthYear)) {
     errorText = "Sorry, age must be valid number";
+    alert(errorText);
+    throw errorText;
+}
+if (birthYear.trim() === "") {
+    errorText = "Sorry, yours birth year must be non-empty string";
     alert(errorText);
     throw errorText;
 }
 
 let town = prompt('Enter your town');
 
-if (town == null) {
+if (town === null) {
     errorText = "Sorry that you do not want to share your town";
     alert(errorText);
     throw errorText;
 }
-if (town.trim() == "") {
+if (town.trim() === "") {
     errorText = "Sorry, town must be non-empty string";
     alert(errorText);
     throw errorText;
@@ -37,7 +42,7 @@ if (sport == null) {
     alert(errorText);
     throw errorText;
 }
-if (sport.trim() == "") {
+if (sport.trim() === "") {
     errorText = "Sorry, sport must be non-empty string";
     alert(errorText);
     throw errorText;
@@ -47,7 +52,7 @@ if (sport.trim() == "") {
 
 let resultMessage = "";
 
-resultMessage += `Your age is ${age}`;
+resultMessage += `Your age is ${2022 - birthYear}`;
 
 resultMessage += "\n";
 
